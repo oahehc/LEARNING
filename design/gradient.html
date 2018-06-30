@@ -1,0 +1,183 @@
+<html>
+<head>
+    <style>
+        div{
+            height: 100px;
+            line-height: 100px;
+            width: 200px;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+
+        .linear1{background: -webkit-linear-gradient(45deg,black,white);}
+        .linear2{background: -webkit-linear-gradient(75deg,black,white);}
+        .linear3{background: -webkit-repeating-linear-gradient(black,gray 10%,white 30%);}
+        .linear4{background: -webkit-linear-gradient(45deg, #557777 60%, transparent 40%);}
+        .linear5{background: -webkit-linear-gradient(135deg, #ee6655 30%, transparent 20%);}
+        .linear6{
+            background: 
+                -webkit-linear-gradient(45deg, #557777 50%, transparent 50%),
+                -webkit-linear-gradient(90deg, #ee6655 100%, transparent 100%),
+                -webkit-linear-gradient(135deg, #ffeebb 50%, transparent 50%) 100% 0%,
+                -webkit-linear-gradient(180deg, #ffcc55 100%, transparent 100%) 100% 0%,
+                -webkit-linear-gradient(225deg, #ffaa22 50%, transparent 50%) 100% 100%,
+                -webkit-linear-gradient(270deg, #ccddaa 100%, transparent 100%) 100% 100%,
+                -webkit-linear-gradient(315deg, #77aa88 50%, transparent 50%) 0% 100%,
+                -webkit-linear-gradient(360deg, #99cc99 100%, transparent 100%) 0% 100%;            
+            background-repeat: no-repeat;
+            background-size: 50% 50%;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        
+        
+        
+        .circle1{background: -webkit-radial-gradient(center, circle closest-side, #00A3EF, #FFFFFF);}
+        .circle2{background: -webkit-radial-gradient(center, circle closest-corner, #00A3EF, #FFFFFF);}
+        .circle3{background: -webkit-radial-gradient(center, circle farthest-side, #00A3EF, #FFFFFF);}
+        .circle4{background: -webkit-radial-gradient(center, circle farthest-corner, #00A3EF, #FFFFFF);}
+        .circle5{background: -webkit-radial-gradient(red 5%, orange 15%, yellow 60%);}
+        .circle6{background: -webkit-repeating-radial-gradient(black,gray 10%,white 30%);}
+        
+        
+        
+        .shadow{
+            background-color: lightgray;
+            border-radius: 100%;
+            width: 100px;
+        }
+        .shadow1{box-shadow:3px 0px 0 gray;}
+        .shadow2{box-shadow:inset 3px 0px 0 gray;}
+        .shadow3{box-shadow:inset 3px 3px 3px gray;}
+        .shadow4{box-shadow:inset 3px 3px 3px 3px gray;}
+        
+        
+
+        .test1{
+            height: 200px;
+            border-radius: 100%;
+            background: -webkit-linear-gradient(top left, gray, white);
+            box-shadow:inset 1px 1px 1px #999;
+        }
+            .test1 div{
+                width: 100px;
+                border-radius: 100%;
+                background: -webkit-linear-gradient(bottom right, gray, white);
+                margin-top: 50px;
+                margin-left: 50px;
+                box-shadow:inset -1px -1px 1px #999;
+            }
+        
+        .test2{
+            height: 200px;
+            border-radius: 10%;
+            background-color: white;
+            background: -webkit-linear-gradient(top, #fff, #eee);
+            box-shadow: 0px 15px 25px 0px #999;
+            box-shadow: inset 0px -2px 3px 0px #999;
+        }
+            .test2>div{
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+                margin-top: 25px;
+                margin-left: 25px;
+                background-color: #666;
+                background: -webkit-linear-gradient(top, #777, #555);
+                box-shadow: inset 0px 0px 10px 3px #444;
+            }
+            .test2>div>div{
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                margin-top: 70px;
+                margin-left: 70px;
+                background-color: white;
+                box-shadow: 0px 0px 2px 1px #333;
+            }
+        
+        
+        .test3{
+            height: 200px;
+            border-radius: 10%;
+            background-color: white;
+            background: -webkit-linear-gradient(top, #fff, #eee);
+            box-shadow: 0px 15px 25px 0px #999;
+            box-shadow: inset 0px -2px 3px 0px #999;
+        }
+            .test3>div{
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+                margin-top: 25px;
+                margin-left: 25px;
+                background-color: #666;
+                background: -webkit-linear-gradient(top left, #EE8800, #FFFFAA);
+                box-shadow: inset -5px -5px 30px 0px #FFAA00;
+            }
+            .test3>div>div{
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+                background-color: transparent;
+                box-shadow: 0px 0px 5px 0px #333333;
+            }
+        
+    </style>
+</head>
+<body>
+<!--test-->
+<div class="test1">
+    <div></div>    
+</div>
+<div class="test2">
+    <div>
+        <div></div>
+    </div>
+</div>
+<div class="test3">
+    <div>
+        <div></div>
+    </div>
+   
+</div>
+
+
+
+<div style="clear:both; width:0px; margin:0px"></div>
+<!--shadow-->
+<div class="shadow shadow1">out</div>
+<div class="shadow shadow2">in</div>
+<div class="shadow shadow3">blur</div>
+<div class="shadow shadow4">spread</div>
+<div class="shadow shadow5"></div>
+<div class="shadow shadow6"></div>
+
+
+<div style="clear:both; width:0px; margin:0px"></div>
+<!--linear-->
+<div class="linear1">45deg</div>
+<div class="linear2">75deg</div>
+<div class="linear3">repeat</div>
+<div class="linear4">%</div>
+<div class="linear5"></div>
+<div class="linear6">Sector</div>
+
+
+
+
+<div style="clear:both; width:0px; margin:0px"></div>
+<!--circle-->
+<div class="circle1">closest-side</div>
+<div class="circle2">closet-corner</div>
+<div class="circle3">farthest-side</div>
+<div class="circle4">farthest-corner</div>
+<div class="circle5">%</div>
+<div class="circle6">repeat</div>
+                      
+</body>    
+</html>

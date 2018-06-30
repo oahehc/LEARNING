@@ -1,0 +1,14 @@
+'''
+https://www.tensorflow.org/api_guides/python/train
+'''
+tf.train.Optimizer
+tf.train.GradientDescentOptimizer
+tf.train.AdadeltaOptimizer
+tf.train.AdagradOptimizer
+tf.train.AdagradDAOptimizer
+tf.train.MomentumOptimizer
+tf.train.AdamOptimizer
+tf.train.FtrlOptimizer
+tf.train.ProximalGradientDescentOptimizer
+tf.train.ProximalAdagradOptimizer
+tf.train.RMSPropOptimizer
