@@ -1,7 +1,0 @@
-{
-  "rules": {
-    "no-shadow": "off",
-    "no-console": "off",
-    "no-unused-vars": "off"
-  }
-}

@@ -1,6 +1,0 @@
-{
-    "git.ignoreLimitWarning": true,
-    "beautify.ignore": ["*"],
-    "react.beautify.onSave": true,
-    "react.beautify.formatter": "prettydiff"
-}
