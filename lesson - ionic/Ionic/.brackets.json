@@ -1,8 +1,0 @@
-{
-    "jscodehints.detectedExclusions": [
-        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/js/app.js",
-        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.js",
-        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/js/controllers.js",
-        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/platforms/android/build/intermediates/assets/debug/www/js/app.js"
-    ]
-}
