@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.io Demo</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <style>
+        #message {
+            border: 1px solid gray;
+            width: 80%;
+            height: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+            overflow: auto;
+        }
+        
+        #message>div {
+            width: 100%;
+            background: lightgray;
+        }
+        
+        .self {
+            text-align: right;
+        }
+        
+        #messageInput {
+            width: 80%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="nameInput">
+    <div id="message"></div>
+    <div id="form">
+        <input type="text" name="" value="" id="messageInput">
+        <button id="sendBtn">SUBMIT</button>
+    </div>
+    <script>
+        const socket = io();
+        const $message = $('#message');
+        const $messageInput = $('#messageInput');
+        const $sendBtn = $('#sendBtn');
+        const $nameInput = $('#nameInput');
+        $sendBtn.on('click', () => {
+            console.log('click send btn');
+            const msg = $messageInput.val();
+            if (msg && msg !== '') {
+                const msgData = {
+                    name: $nameInput.val() || 'Visiter',
+                    content: msg,
+                };
+                socket.emit('sendMessage', msgData);
+                $message.append(`<div class="self">${msgData.name}: ${msgData.content}</div>`);
+                $messageInput.val('').focus();
+            }
+        });
+        socket.on('message', (data) => {
+            console.log('receive from server', data);
+            $message.append(`<div class="other">${data.name}: ${data.content}</div>`);
+        });
+
+        // // create hello event to send user name to server when socket connect
+        // socket.on('connect', () => {
+        //     socket.emit('hello', {
+        //         name: 'Andrew',
+        //     });
+        // });
+        // // receive hello even response from server
+        // socket.on('hello', (data) => {
+        //     console.log('server:', data);
+        // });
+
+        // jQuery
+        $(() => {
+            $('#messageInput').focus();
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+body{
+	font-family:Calibri, Arial, 微軟正黑體;
+	font-size:1em;
+	overflow:hidden;		
+}
+input,button,select,option{
+	font-family:Calibri, Arial, 微軟正黑體;	
+}
+
+
+/*head*/
+div.head{
+	width:100%;
+	height:20px;
+	overflow:hidden;
+	display:none;
+}	
+	/*logout*/
+	div.account{
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
+	input.aside_flag{
+		-moz-opacity:0.6;
+		opacity:0.6;
+		filter:alpha(opacity=60);
+		background-color:#999;
+		margin:1px;
+		border:0px;
+	}
+		input.aside_flag:hover{
+			background-color:black;
+			color:white;
+			font-weight:bold;		
+		}
+	input.logout_check{
+		display:none;
+	}
+	/*link*/
+	div.author{
+		position:absolute;
+		right:35px;
+		top:3px;
+	}
+		input.link{
+			-moz-opacity:0.6;
+			opacity:0.6;
+			filter:alpha(opacity=60);
+			background-color:#CCC;
+			margin:1px;
+			border:0px;
+			font-size:0.9em;
+			color:darkblue;
+			font-weight:bold;			
+		}
+			input.link:hover{
+				background-color:black;
+				color:white;
+			}
+	/*aside button*/
+	div.setting{
+		position:fixed;
+		right:0px;
+		top:0px;
+		z-index:100;	
+	}
+	div.aside{
+		position:fixed;
+		right:0px;
+		top:0px;
+		z-index:100;	
+	}
+		input.aside_id{
+			width:60px;
+			-moz-opacity:0.6;
+			opacity:0.6;
+			filter:alpha(opacity=60);
+			background-color:#9F9;
+			margin:1px;
+			border:0px;
+		}
+			input.aside_id:hover{
+				background-color:#363;
+				color:white;
+				font-weight:bold;		
+			}		
+		input.aside{
+			width:60px;
+			-moz-opacity:0.6;
+			opacity:0.6;
+			filter:alpha(opacity=60);
+			background-color:#4FF;
+			margin:1px;
+			border:0px;
+		}
+			input.aside:hover{
+				background-color:#04F;
+				color:white;
+				font-weight:bold;		
+			}		
+		input#four_div{
+			display:none;
+		}
+		input.mobile{
+			display:none;
+		}
+
+
+input.text{
+	width:100%;
+}
+input.center{
+	text-align:center;
+}
+input.tiny{
+	width:30px;
+}
+input.middle{
+	width:120px;
+}		
+select.big,input.big{
+	font-size:1.2em;
+}
+span.big{
+	font-size:1.3em;
+	font-weight:bold;
+}	
+select.middle,input.middle{
+	font-size:1.0em;	
+}
+span.middle{
+	font-size:1.1em;
+}
+select.hidden{
+	display:none;
+}
+input.unpadding{
+	padding:0px;		
+}
+input.unmargin{
+	margin:0px;		
+}
+input.img{
+	width:20px;
+	margin:1px;
+}
+
+a:link{
+	text-decoration:none;
+	color:#00F;
+	font-weight:bold;		
+}   
+a:visited{
+	text-decoration:none;
+	color:#909
+	font-weight:bold;		
+}		
+a:hover{
+	text-decoration:none;
+	color:#090;
+	font-weight:bold;
+}
+
+
+
+div.content{
+	float:left;
+	width:100%;
+	height:90%;
+	padding-bottom:1%;
+	overflow:auto;	
+}
+div.left{
+	float:left;
+	width:50%;
+	height:auto;
+	overflow:hidden;
+}
+div.right{
+	float:left;
+	width:50%;
+	height:auto;
+	overflow:hidden;	
+}
+div.I{
+	float:left;
+	width:99%;
+	height:47%;
+	padding:0.5%;
+	overflow:none;
+	background:pink;
+}
+	div.full{
+		height:95%;			
+	}
+	div.hide{
+		display:none;		
+	}	
+div.II{
+	float:left;
+	width:99%;
+	height:47%;	
+	padding:0.5%;		
+	overflow:none;	
+	background:lightyellow;	
+}
+div.III{
+	float:left;
+	width:99%;
+	height:47%;
+	padding:0.5%;		
+	overflow:none;
+	background:lightblue;	
+}
+div.IV{
+	float:left;
+	width:99%;
+	height:47%;
+	padding:0.5%;		
+	overflow:none;	
+	background:lightgreen;	
+}	
+div.timer{
+	float:left;
+	width:90%;
+	height:90%;
+	padding:2%;
+	overflow:auto;
+	display:none;
+	background:lightgray;
+}
+div.filter{
+	float:left;	
+}
+
+
+table{
+	border-collapse:collapse;
+	width:100%;
+	white-space:nowrap;
+}
+td{
+	border:1px groove;
+	padding:5px 10px;
+	text-align:center;
+}	
+	tr.gray,td.gray,th.gray{
+		background:gray;
+		color:white;
+	}
+	tr.orange{
+		background:#FFBB88;
+	}
+	tr.black,th.black,td.black{
+		background:black;
+		color:white;
+	}
+	tr.lightgray,td.lightgray{
+		background-color:lightgray !important;
+	}
+	tr.bold{
+		font-weight:bold;
+	}
+	td.left{
+		text-align:left;	
+	}
+	td.right{
+		text-align:right;	
+	}
+	td.unpadding{
+		padding:0px;		
+	}
+	td.smallpadding{
+		padding:1px 3px;		
+	}	
+	td.unborder{
+		border:0px;	
+	}
+	td.short{
+		width:10%;
+	}
+	td.min{
+		width:5%;
+	}	
+	td.middle{
+		width:15%;
+	}	
+	td.long{
+		width:50%;	
+	}
+	td.red{
+		color:red;
+	}
+	td.italic{
+		font-style:italic;
+	}	
+
+img.chart{
+	width:98%;
+	height:80%;
+	margin-left:1%;
+}
+
+div.result{
+	width:100%;
+	font-size:1.1em;
+	text-align:center;
+}
+	div.link{
+		float:left;
+		width:auto;
+		background-color:lightgray;
+		padding:2px;
+		margin:0px 2px;
+		font-size:0.9em;
+	}
+	div.link:hover{
+		background-color:black;	
+	}
+div.loadingdiv{
+	height:100%; 
+	width:100%; 
+	position:absolute; 
+	z-index:110; 
+	top:0px; 
+	left:0px; 
+	display:block; 
+	background:#FFF;
+	font-size:1.5em;
+	text-align:center;
+	padding-top:150px;
+	-moz-opacity:0.9;
+	opacity:0.9;
+	filter:alpha(opacity=90);		
+}
+
+/*frozen first row for table*/
+td.titlecolumn1,td.titlecolumn2,td.titlecolumn3,td.titlecolumn4{
+	position: relative;
+	top:0px;
+	background:gray;
+	color:white;
+	border-top:0px;
+	z-index:90;
+}	
+td.pink{
+	background:pink;
+	border:0px;
+}
+tr.input{
+	display:none;
+}
+
+
+table.mobile,td.mobile,input.mobile{
+	font-size:1.2em;
+	display:none;
+}	
+table.mobile td{
+	padding:0px
+}	
+table.mobile th{
+	padding:3px 6px
+}
+table.mobile input{
+	font-size:1.1em;
+	height:35px;
+}
+
+/*for resposive design*/
+	@media (max-width: 1660px){			
+	}
+	@media (max-width: 1366px){			
+	}	
+	@media (max-width: 960px){		
+	}
+	/*各象限DIV放大為全視窗; target remark & 部分資訊; td.long縮短長度; show div選單*/
+	@media (max-width: 640px){
+		body{
+			overflow:auto;		
+		}
+		div.I,div.II,div.III,div.IV{
+			height:auto;
+			min-height:100%;
+			margin-bottom:1px;
+		}
+		div.left,div.right{
+			width:98%;
+		}
+		td.long{
+			width:15%;
+		}
+		span.web{
+			display:none;
+		}
+		
+		input.text{
+			height:30px;
+		}
+		input.mobile_big{
+			float:left;
+			font-size:1.2em;
+			width:50%;
+			height:35px;
+		}	
+		input.aside_id{
+			height:30px;
+			width:40px;
+			font-size:1.1em;
+		}
+		input.aside_flag{
+			height:30px;
+			min-width:30px;
+			font-size:1.1em;
+		}
+		div.change{
+			display:none;
+		}	
+		table.web,td.web,input.web{
+			display:none;
+		}
+		table.mobile,td.mobile,input.mobile{
+			display:table;
+		}
+		input.mobile{
+			display:block;
+		}		
+		div.head{
+			position:fixed;
+			left:0px;
+			top:0px;
+			z-index:100;
+			height:30px;
+			background:white;
+		}		
+	}
+	@media (max-width: 480px){
+		input.link{
+			display:none;
+		}
+	}
+
+
+div.alert{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:120;
+	width:100px;
+	height:100px;
+	background:gray;
+	}

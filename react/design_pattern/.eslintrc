@@ -1,0 +1,25 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "defaultParams": true
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "react/sort-comp": 0,
+    "linebreak-style": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0
+  },
+  "globals": {
+    "firebase": false
+  }
+}
