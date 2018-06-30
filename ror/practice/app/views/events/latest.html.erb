@@ -1,0 +1,14 @@
+<ul>
+<% @events.each do |event| %>
+  <li>
+ 	  <%= event.name %>
+ 	  <%= event.description %>
+    <%= link_to 'Show', event_path(event) %>
+    <%= link_to 'Edit', edit_event_path(event) %>
+    <%= link_to 'attendees', event_attendees_path(event) %>
+    <%= link_to 'location', event_location_path(event) %>
+    <%= button_to 'Delete', event_path(event), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  </li>
+<% end %>
+</ul>
+<p><%= link_to 'Back to index', events_path %></p>

@@ -1,0 +1,27 @@
+<%= f.collection_select(:category_id, Category.all, :id, :name) %>
+<%= f.label :name, "Name" %>
+<%= f.text_field :name %>
+<%= f.label :description, "Description" %>
+<%= f.text_area :description %>
+
+<%= f.fields_for :location do |location_form| %>
+<p>
+<%= location_form.label :name, "Location Name" %>
+<%= location_form.text_field :name %>
+<% unless location_form.object.new_record? %>
+    <%= location_form.label :_destroy, 'Remove:' %>
+    <%= location_form.check_box :_destroy %>
+<% end %>
+</p>
+<% end %>
+
+<%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %>
+
+
+<% if @event.errors.any? %>
+  <ul>
+  <% @event.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
