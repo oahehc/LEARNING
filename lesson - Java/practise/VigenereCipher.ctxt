@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=key
+comment0.target=VigenereCipher(java.lang.String)
+comment1.params=msg\ key
+comment1.target=java.lang.String\ encription(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ test()
+comment3.params=msg\ slice\ start
+comment3.target=java.lang.String\ sliceString(java.lang.String,\ int,\ int)
+numComments=4

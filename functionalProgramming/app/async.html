@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,
+    body {
+      font-family: 'calibri', '微軟正黑體';
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid gray;
+      padding: 5px 10px;
+    }
+
+  </style>
+</head>
+<div id="myDiv">test</div>
+
+<body>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+  <script src="scripts/ramda.min.js"></script>
+  <script>
+    // var fs = require('fs');
+
+    // //  readFile :: String -> Task Error String
+    // var readFile = function (filename) {
+    //   return new Task(function (reject, result) {
+    //     fs.readFile(filename, 'utf-8', function (err, data) {
+    //       err ? reject(err) : result(data);
+    //     });
+    //   });
+    // };
+
+    // readFile('metamorphosis').map(split('\n')).map(head);
+    // // Task("One morning, as Gregor Samsa was waking up from anxious dreams, he discovered that
+    // // in bed he had been changed into a monstrous verminous bug.")
+
+
+    // jQuery getJSON example:
+    //========================
+
+    //  getJSON :: String -> {} -> Task Error JSON
+    var getJSON = R.curry(function (url, params) {
+      return new Task(function (reject, result) {
+        $.getJSON(url, params, result).fail(reject);
+      });
+    });
+
+    getJSON('/video', {
+      id: 10,
+    }).map(_.prop('title'));
+    // Task("Family Matters ep 15")
+
+    // We can put normal, non futuristic values inside as well
+    Task.of(3).map(function (three) {
+      return three + 1;
+    });
+    // Task(4)
+
+  </script>
+</body>
+
+</html>

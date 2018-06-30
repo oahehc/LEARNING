@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=s\ key
+comment0.target=java.lang.String\ create(java.lang.String,\ int)
+comment1.params=
+comment1.target=void\ testCreate()
+comment2.params=s\ key
+comment2.target=java.lang.String\ createEncrypt(java.lang.String,\ int)
+comment3.params=
+comment3.target=void\ testCreateEncrypt()
+numComments=4

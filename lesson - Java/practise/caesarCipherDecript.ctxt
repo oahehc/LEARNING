@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=rolls
+comment0.target=void\ simulate(int)
+comment1.params=
+comment1.target=void\ countsFriends()
+comment2.params=
+comment2.target=java.lang.String[]\ getCommon()
+comment3.params=resource\ common\ counts
+comment3.target=void\ countWords(edu.duke.FileResource,\ java.lang.String[],\ int[])
+comment4.params=list\ word
+comment4.target=int\ indexOf(java.lang.String[],\ java.lang.String)
+numComments=5
