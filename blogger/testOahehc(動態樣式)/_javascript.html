@@ -1,0 +1,228 @@
+<script>    
+//example for adjust Blogger teomplates content
+blogger.templates().compile(
+    '{template:Sharing}' +
+    '<div class="share-controls' +
+      ' {block:defer}defer{/block:defer}' +
+      ' {block:delay}delay{/block:delay}"' +
+      ' data-defer="{defer}" data-delay="{delay}">' +
+    '{SharePlusOne}{ShareTwitter}{ShareFacebook}' +
+    '</div>' +
+    '{/template:Sharing}'
+);    
+   
+//adjust Blogger teomplates content TEST
+blogger.templates().compile(
+    '{template:Item}<div class="item hentry">test</div>{/template:Item}'  
+);    
+
+//remove post list div rotation at index page 
+blogger.templates().template(
+  "CustomCSS",
+  ".item{transform: rotate(0deg) !important; margin:0px 10px 10px 10px !important;}"
+    + ".customLabel{position: absolute !important; top: 0px !important; right: 0px !important;}"
+);
+    
+//add personal label for tags
+blogger.templates().template(
+  "CustomLable",
+  "{template:GadgetLabelCustom}<div class='test'></div>{/template:GadgetLabelCustom}"
+    
+  '{template:GadgetLabelCustom}'+
+    '<ul class="gadget-label customLabel">'+
+    '{block:labels}'+
+    '<li class="gadget-label-item"><a href="{url}">{name}</a></li>' +
+    '{/block:labels}'+
+    '</ul>'+
+    '{/template:GadgetLabelCustom}'
+);
+    
+//add outer div for label widget
+blogger.templates().compile(
+    '{template:GadgetLabel}<div class="customLabel"><ul class="gadget-label">{block:labels}{GadgetLabelItem}{/block:labels}</ul></div>{/template:GadgetLabel}'  
+);
+
+    
+//adjust src for youtube iframe for autoplay
+$(function(){
+    $('#iframeId').attr('src','https://www.youtube.com/embed/6AaiOwjmUN8?autoplay=1');
+})
+</script>
+
+
+//use relocate for page to replace label tag
+<script>
+window.location = "http://testoahehc.blogspot.com/search/label/Food";
+</script>
+
+
+
+
+
+
+
+<div class="customLabel">
+    <ul class="gadget-label gadget-label-cloud">
+        <li class="gadget-label-item"> 
+            <a href="http://testoahehc.blogspot.com/search/label/Ferrari">Ferrari</a>
+        </li>
+        <li class="gadget-label-item"> 
+            <a href="http://testoahehc.blogspot.com/search/label/Food">Food</a>
+        </li>
+        <li class="gadget-label-item"> 
+            <a href="http://testoahehc.blogspot.com/search/label/Lamborghini">Lamborghini</a>
+        </li>
+        <li class="gadget-label-item"> 
+            <a href="http://testoahehc.blogspot.com/search/label/McLaren">McLaren</a>
+        </li>
+        <li class="gadget-label-item"> 
+            <a href="http://testoahehc.blogspot.com/search/label/Music">Music</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+//show blogger objects
+blogger.templates()
+//show object content
+console.log(blogger.templates().template("Header").raw());
+
+
+//header
+"{template:Header}
+    <div id="header-container">
+    <div id="header" class="header">
+        <div class="header-bar">
+            {block:BlogID}{BlogHeader}{/block:BlogID}{block:PlusID}{block:IfNotBlogID}{PlusHeader}{/block:IfNotBlogID}{/block:PlusID}
+        </div>
+        <div class="header-drawer sticky open">
+            {block:HasViews}
+                <div id="views" class="{block:HasPages}menu{block:HasPages}{block:IfNotPages}tabs{block:IfNotPages}">
+                    <span class="menu-heading">{CurrentView}<span class="indicator"></span></span>
+                    <ul>
+                    {block:Views}
+                        <li class="{Label}">
+                            <span class="menu-background"></span>
+                            <a class="menu-item{block:Current} current{/block:Current}" href="{URL}" target="_self" data-view-name="{Name}">{LocalizedLabel}</a>
+                        </li>
+                    {/block:Views}
+                    </ul>
+                </div>
+            {/block:HasViews}
+            {block:HasPages}
+            <div id="pages" class="tabs">
+                <span class="menu-heading">Pages<span class="indicator"></span></span>
+                <ul>
+                {block:Pages}
+                    <li>
+                    <span class="menu-background"></span><a class="menu-item" data-item-type="page" data-id="{ID}" href="{URL}">{Label}</a>
+                    </li>
+                {/block:Pages}
+                </ul>
+            </div>
+            {/block:HasPages}
+            <div class="blog-admin admin-controls">
+                <a class="new-post" href="{BloggerBase}/post-edit.g?blogID={BlogID}&from=pencil" target="_self" title="{lang:New post}"></a>
+                <a class="dashboard" href="https://www.blogger.com/home" target="_self" title="{lang:Dashboard}"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+         <script>
+         (function($) {
+         // Make the pages switch between tabs and menu as needed↵    var pages = $('#pages');↵    var tabs = pages.length ? pages : $('#views'); // If no pages, views will be tabs, same resizing applies.↵    if (tabs.length) {↵      function onResize(e) {↵        tabs.removeClass('menu').addClass('tabs');↵        var taken = 0;↵        tabs.parent().children().each(function() {↵          taken += $(this).outerWidth();↵        });↵        var overflowing = tabs.parent().width() < (taken + 50); // Add a buffer for safety.↵        overflowing ? tabs.removeClass('tabs').addClass('menu') : tabs.addClass('tabs');↵      }↵      $(window).resize(onResize);↵      onResize(); // Resize immediately.↵↵      // Mark a page as selected when it is open.↵      var rePage = new RegExp('.*/p(/[^/]+.html$)');↵      $(blogger.ui()).bind('select clearselection', function(e, item) {↵        pages.find('.menu-item').each(function(){↵          var current = false;↵          if (item) {↵            var us = rePage.exec($(this).attr('href'));↵            var them = rePage.exec(item.url);↵            current = !!(us && them && (us[1] == them[1]));↵          }↵          $(this).toggleClass('current', current);↵        });↵      });↵    }↵  })(jQuery);
+        </script>
+{/template:Header}"
+//compile result for page tabs
+<div id="pages" class="tabs">
+    <span class="menu-heading">Pages<span class="indicator"></span></span>
+    <ul>
+        <li>
+            <span class="menu-background"></span>
+            <a class="menu-item" data-item-type="page" data-id="" href="http://testoahehc.blogspot.tw/">Home</a>
+        </li>
+        <li>
+            <span class="menu-background"></span>
+            <a class="menu-item" data-item-type="page" data-id="6182609004864842409" href="http://testoahehc.blogspot.tw/p/about.html">About</a>
+        </li>
+        <li>
+            <span class="menu-background"></span>
+            <a class="menu-item" data-item-type="page" data-id="5855957014462852721" href="http://testoahehc.blogspot.tw/p/test.html">Test</a>
+        </li>
+    </ul>
+</div>
+
+
+//label widget
+"{template:GadgetLabel}
+<ul class="gadget-label gadget-label-{display}{block:IfshowFreqNumbers} gadget-label-show-freq-numbers{/block:IfshowFreqNumbers}">
+    {block:labels}  
+        {GadgetLabelItem}  
+    {/block:labels}
+</ul>
+{/template:GadgetLabel}"
+//compile result
+<div class="gadget-item gadget-dock-overflow-normal gadget-selected" data-gadget-id="0">
+    <div class="gadget-menu">
+        <div class="gadget-icons"> 
+            <img class="gadget-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAgUlEQVQ4y6XTwQ3AIAgFUEZyhI7gCIzuCGzwe9HWKhgo/2SUvBBFgi8XGQFAtBQ3AxEAxYPUvlkj0Iy05cDdUbQTFYrciQlpSCQCoGSRt6O+SEHUW8pAMm44A/H83n8gBrBNXwTi54mVMfZA/Bk241OdIF5qyYwBsVJHx0yQaMBAblcXSj0+j7awAAAAAElFTkSuQmCC"> 
+            <img class="gadget-icon-selected" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAgklEQVQ4jaXSAQrAIAgAQJ8U9IE9YU/w6T2hH7gVWxPR0BlIUXJYBrVWcsQBxiAiAJHcDKTfUTzIOTbHHIE40vhBpKJoJSoUeRMT0pBITCiLfBU9ixQ0kJKE+tvSDIT8b/yBcD6s+GQRCFeL5XBC6woq4oCQ55rIBkKZt0UE1DXgRS6+HFtDSeJYlgAAAABJRU5ErkJggg=="> 
+        </div> 
+        <span class="gadget-title">標籤</span> 
+    </div>
+    <div class="gadget-container">
+        <div class="gadget"> <span class="gadget-title">標籤</span>
+            <div class="gadget-content">
+                <ul class="gadget-label gadget-label-cloud">
+                    <li class="gadget-label-item gadget-label-size-5"> 
+                        <a href="http://testoahehc.blogspot.com/search/label/Ferrari">Ferrari</a>
+                        <span class="gadget-label-count">4</span>
+                    </li>
+                    <li class="gadget-label-item gadget-label-size-3"> 
+                        <a href="http://testoahehc.blogspot.com/search/label/Food">Food</a>
+                        <span class="gadget-label-count">2</span> 
+                    </li>
+                    <li class="gadget-label-item gadget-label-size-3"> 
+                        <a href="http://testoahehc.blogspot.com/search/label/Lamborghini">Lamborghini</a>
+                        <span class="gadget-label-count">2</span> 
+                    </li>
+                    <li class="gadget-label-item gadget-label-size-1"> 
+                        <a href="http://testoahehc.blogspot.com/search/label/McLaren">McLaren</a>
+                        <span class="gadget-label-count">1</span> 
+                    </li>
+                    <li class="gadget-label-item gadget-label-size-3"> 
+                        <a href="http://testoahehc.blogspot.com/search/label/Music">Music</a>
+                        <span class="gadget-label-count">2</span> 
+                    </li>
+                </ul>
+                <iframe class="gadget-resize-detector"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+//page
+"{template:Page}
+<div class="article hentry {TagsAsClasses}" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="article-header">
+        <h1 class="title entry-title">
+            <a href="{Permalink}" rel="bookmark" itemprop="url" data-item-type="page" data-id="{PageID}">{HTMLEscapedTitle}</a>
+            <span class="blog-admin">
+                <a class="edit" href="{BloggerBase}/page-edit.g?blogID={BlogID}&pageID={PageID}&from=pencil" target="_self" title="Edit"></a>
+            </span>
+        </h1>
+    </div>
+    <div class="article-content entry-content" itemprop="articleBody">{Body}</div>
+    <div class="article-footer"></div>
+</div>
+{/template:Page}"

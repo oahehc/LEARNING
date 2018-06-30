@@ -1,0 +1,13 @@
+[{
+    "id": "a",
+    "title": "item1",
+    "completed": false
+}, {
+    "id": "b",
+    "title": "item2",
+    "completed": true
+}, {
+    "id": "c",
+    "title": "item3",
+    "completed": false
+}]

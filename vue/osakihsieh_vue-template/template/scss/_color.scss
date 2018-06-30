@@ -1,0 +1,37 @@
+$red: #d0021b;
+$white: #ffffff;
+$yellow: #f5a623;
+$black: #000000;
+$marigold: #ffc107;
+
+
+// ----- global color params
+/* $bgc: mix($black, #d09d65, 80); */
+$bgc: lighten(#eee, 2);
+$reverse_bgc: mix($black, #eee, 90);
+
+$color0: darken(#1b95e0, 5);
+$reverse_color0: $white;
+
+/* $color1: $marigold; */
+$color1: darken(mix(#1b95e0, $bgc, 100), 10);
+
+$inputColor: darken($color0, 20);
+$inputBGColor: $white;
+$buttonColor: rgba(0,0,0,.6);
+$buttonBGColor: #E0E1E2;
+
+$peaceDark: lighten(#eee, 2);
+$border-color: mix($reverse_bgc, $bgc, 18);
+
+//- vToast
+$error: rgb(218, 52, 52);
+$warning: rgb(255, 200, 76);
+$success: rgb(80, 210, 162);
+
+@mixin common_bg {
+  $c0: mix($color0, $bgc, 90);
+  $c1: darken($c0, 5);
+  background-color: $c0;
+  background-image: linear-gradient(to left, $c0 0%, $c1 50%, $c1 50%, $c0 100%);
+}

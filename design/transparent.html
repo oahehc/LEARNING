@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+        .trans{
+            height: 150px;
+            width: 200px;
+            background-color: rgba(100,200,300,0.5);
+        }
+        .trans div{
+            width: 100%;
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+            .trans>.first{
+                height: 20%;
+                background-color: rgba(300,0,0,0.5);    
+            }
+            .trans>.second{
+                height: 30%;
+                background-color: rgba(0,300,0,0.3);
+            }
+            .trans>.third{
+                height: 50%;
+                background-color: rgba(0,0,300,0.1);
+            }
+        
+        
+        
+        .transGrad{
+            width: 400px;
+            height: 250px;
+            margin-top: 30px;
+        }
+            .transGrad>.first{
+                height: 15%;
+                background: -webkit-linear-gradient(top, #00ffff, #0099ff);
+            }
+            .transGrad>.firstBorder{
+                height: 5%;
+                background-color: #000099;
+            }
+            .transGrad>.second{
+                height: 25%;
+                background: -webkit-linear-gradient(top, #0066ff, #0022ff);
+            }
+            .transGrad>.secondBorder{
+                height: 15%;
+                background-color: #000066;
+            }
+            .transGrad>.third{
+                height: 40%;
+                background: -webkit-linear-gradient(top, #0000cc, #000066);
+            }
+        
+    </style>
+    <title>Transparent</title>
+</head>
+<body>
+<div class="trans">
+   <div class="first">0.5</div>
+   <div class="second">0.3</div>
+   <div class="third">0.1</div>    
+</div>
+<div style="clear:both; width:0px; margin:0px"></div>
+    
+<div class="transGrad">
+    <div class="first"></div>
+    <div class="firstBorder"></div>
+    <div class="second"></div>
+    <div class="secondBorder"></div>
+    <div class="third"></div>
+</div> 
+    
+    
+    
+    
+</body>
+</html>

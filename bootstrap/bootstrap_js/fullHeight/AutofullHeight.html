@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【梅問題‧教學網範-例預覽】DIV高度自動延展100%懶人包</title>
+<meta name="keywords" content="梅問題教學網,css教學,css,網頁設計,mouseover,滑入變顏色" />
+<meta name="Author" content="梅干桑" />
+<style>
+body{background:#eeeeee; margin:0;}
+#wrapper {width:990px; background:#fff; margin:0 auto; border:solid 10px #cccc;}
+#header{height:100px; background:#3995d0; line-height:100px; text-align:center; }
+#header a{
+	font-size:36px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#content{padding:10px; font-size:15px;}
+#footer{height:40px; background:#3995d0; line-height:40px; text-align:center; color:#CCCCCC; font-size:12px;}
+</style>
+<script type="text/javascript" src="jquery-1.6.min.js"></script>
+<script type="text/javascript" src="minwt.auto_full_height.mini.js"></script>
+</head>
+
+<body>
+<div id="wrapper" none="true">
+	<div id="header" _height="none"><a href="http://www.minwt.com" target="_blank">梅問題教學網</a></div>
+  <div id="content" _height="auto">這是一個DIV區塊自動延展100%懶人包，直接從html標籤中設定，立即就可完成此夢想囉!<br />
+	<ul>
+	    <li>none="ture"->直接取得實際高度，排除所有CSS的設，如:border、margin、padding等。</li>
+	    <li>_height="none"->扣除高度。</li>
+		<li>_height="auto"->高度100%</li>
+    </ul>
+  </div>
+    <div id="footer" _height="none">Copyright © 2007-2011 梅問題教學網 All Rights Reserved.</div>
+</div>
+</body>
+</html>

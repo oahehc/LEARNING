@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;edu.duke&apos; to &apos;eclipseTest/src/EarthQuake&apos;&#x0D;&#x0A;- Original project: &apos;VocabularyAnalizer&apos;&#x0D;&#x0A;- Destination element: &apos;eclipseTest/src/EarthQuake&apos;&#x0D;&#x0A;- Original element: &apos;VocabularyAnalizer/src/edu.duke&apos;" description="Copy package" destination="=eclipseTest/src&lt;EarthQuake" element1="/src&lt;edu.duke" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1465006929898" version="1.0"/>
+</session>

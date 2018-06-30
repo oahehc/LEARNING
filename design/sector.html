@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style>
+        div{
+            position: absolute;    
+            margin: 0px;
+            height: 100px;
+            width: 100px;
+/*background-color: gray;*/
+        }
+        
+        .sector{
+            overflow: hidden;
+            top: 100px;
+            left: 100px;   
+        }
+        .circle{
+            -webkit-transform: translate(-50%, -50%) skew(-60deg);
+            border-radius: 100%;
+        }
+        .sector1{
+            -webkit-transform-origin: 0% 0%;
+            -webkit-transform: skew(60deg);    
+/*background-color: lightblue;*/
+        }
+            .sector1 div{
+                background-color: blue;
+            }
+        .sector2{
+            -webkit-transform-origin: 0% 0%;
+            -webkit-transform: rotate(-60deg) skew(60deg);         
+        }
+            .sector2 div{
+                background-color: yellow;
+            }
+        .sector3{
+            -webkit-transform-origin: 0% 0%;
+            -webkit-transform: rotate(-90deg) skew(60deg);                
+        }
+            .sector3 div{
+                background-color: green;
+            }
+    </style>
+</head>
+<body>
+   <div></div>
+    <div class="sector sector1">
+        <div class="circle"></div>
+    </div>
+    
+    <div class="sector sector2">
+        <div class="circle"></div>
+    </div>
+    <div class="sector sector3">
+        <div class="circle"></div>
+    </div>
+    
+</body>    
+</html>

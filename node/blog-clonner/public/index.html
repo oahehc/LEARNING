@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            font-size: 1.5rem;
+            width: 100%;
+            padding-left: 5px;
+        }
+        
+        button {
+            height: 40px;
+            margin-top: 5px;
+        }
+        
+        .content {
+            width: 100vw;
+            margin: 0;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" class="query" value="">
+    <!--
+        http://kenalice0110.pixnet.net/blog/post/36710452
+        無老鍋
+    -->
+    <button class="blog">BLOG CLONE</button>
+    <button class="address">GET ADDRESS</button>
+    <button class="get" id="location">LOCATION</button>
+    <button class="get" id="auth4">AUTH</button>
+    <button class="get" id="upload">UPLOAD</button>
+    <button class="get" id="download">DOWNLOAD</button>
+    <button class="get" id="getDriveFile">getDriveFile</button>
+    <button class="get" id="getDriveFileList">getDriveFileList</button>
+    <hr>
+    <div class="content"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(() => {
+            $('.query').focus().on('focus', function() {
+                $(this).select();
+            });
+            $('.blog').on('click', () => {
+                const input = $('.query').val();
+                console.log(input);
+                if (input) window.location = `${window.location.origin}/blog?q=${input}`;
+                // fetch(`${window.location.origin}/blog?q=${input}`, {
+                //     method: 'GET',
+                // }).then((response) => {
+                //     if (response.status >= 200 && response.status < 300) {
+                //         console.log('response', response);
+                //         console.log('body', response.body);
+                //         $('.content').html(JSON.stringify(response.body));
+                //     } else {
+                //         var error = new Error(response.statusText);
+                //         error.response = response;
+                //         throw error
+                //     }
+                // }).catch((error) => {
+                //     console.error(error);
+                // });
+            });
+            $('.address').on('click', () => {
+                const input = $('.query').val();
+                console.log(input);
+                if (input) window.location = `${window.location.origin}/address?q=${input}`;
+            });
+            $('.get').on('click', (event) => {
+                const dir = $(event.target).attr('id');
+                console.log('click btn', dir);
+                window.location = `${window.location.origin}/${dir}`;
+            });
+        })
+
+    </script>
+</body>
+
+</html>

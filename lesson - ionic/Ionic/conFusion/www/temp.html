@@ -1,0 +1,213 @@
+<form ng-submit="doLogin()">
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Username</span>
+            <input type="text" ng-model="loginData.username">
+        </label>
+        <label>
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+            <button class="button button-block button positive" type="submit">Log In</button>
+        </label>
+    </div>
+</form>
+
+
+
+<label class="item item-input item-select">
+    <span class="input-label">Number of Guests</span>
+    <select ng-model="reservation.numGuests">
+        <option ng-repeat="n in [1,2,3,4,5,6]" value="{{n}}">{{n}}</option>
+    </select>
+</label>
+
+<li class="item item-toggle">
+    Smoking?
+    <label class="toggle toggle-assertive">
+        <input type="checkbox" ng-model="reservation.smoking">
+        <div class="track">
+            <div class="handle"></div>
+        </div>
+    </label>
+</li>
+
+
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Login</h1>
+        <div class="button button-clear" ng-click="closeLogin()">Close</div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doLogin()">
+        ...
+        </form>
+    </ion-content>
+</ion-modal-view>
+
+$ionicModal.fromTemplateUrl(
+    'templates/login.html',{
+        scope:$scope
+}).then(function(modal){
+    $scope.modal = modal;
+});
+
+
+$scope.closeLogin = function(){
+    $scope.modal.hide();
+}
+$scope.login = function(){
+    $scope.modal.show();
+}
+$scope.doLogin = function(){
+    ...
+}
+
+
+
+
+<ion-list show-delete="shouldShowDelete">
+    <ion-item>
+        <ion-delete-button class="ion-minus-circled" ng-click="deleteFavorite(dish.id)"></ion-delete-button>
+    </ion-item>
+</ion-list>
+
+
+
+.filter('favoriteFilter',function(){
+    return function(input, argument1){
+        var out = [];
+        for(var i=0; i<argument1.length; i++){
+            for(var j=0; j<input.length; j++){
+                if(input[j].id === argument1[i].id)
+                    out.push(input[j]);
+            }                              
+        }
+    return out;
+    }
+})
+
+var confirmPopup = $ionicPopup.confirm({
+    title: 'Confirm Delete',
+    template: 'Are you sure you want to delete this item?'
+});
+confirmPopup.then(function(res){
+    if(res){
+        console.log('Ok to delete');
+        favoriteFactory.deleteFormFavorites(index);
+    }else{
+        console.log('Canceled delete');
+    }
+})
+
+
+$ionicLoading.show({
+    template: '<ion-spinner></ion-spinner> Loading...'
+})
+$ionicLoading.hide();
+
+
+
+
+
+.state('app.favorites',{
+    url: '/favorites',
+    views: {
+        'mainContent': {
+            templateUrl: 'templates/favorites.html',
+            controler: 'FavoritesController',
+            resolve: {
+                dishes: ['menuFactory', function(menuFactory){
+                    return menuFactory.query();
+                }]
+                favorites: ['favoriteFactory', function(favoriteFactory){
+                    return favoriteFactory.getFavorites();
+                }]
+            }
+        }
+    }
+})
+
+
+.controller('FavoritesConrtoller',['$scope','dishes','favorites','favoriteFactory',...,function($scope,dishes,favorites,favoriteFactory,...){
+    $scope.baseURL = baseURL;
+    $scope.shouldShowDelete = false;
+    $scope.favorites = favorites;
+    $scope.dishes = dishes;
+}])
+
+
+
+$rootScope.$on('loading:show',function(){
+    $ionicLoading.show({
+        template: '<ion-spinner></ion-spinner> Loading...'
+    })
+})
+
+$rootScope.$on('loading:hide', function(){
+    $ionicLoading.hide();
+})
+
+$rootScope.$on('$stateChangeStart',function(){
+    $rootScope.$broadcast('loading:show');
+});
+$rootScope.$on('$stateChangeSuccess',function(){
+    $rootScope.$broadcast('loading:hide');
+})
+
+
+
+.factory('$localStorage',[$window',function($window){
+    return{
+        store:function(key,value){
+            $window.localStorage[key] = value;
+        },
+        get: function(key, defaultValue){
+            return $window.localStorage[key] || defaultValue;
+        },
+        storeObject: function(key,value){
+            $window.localStorage[key] = JSON.stringify(value);
+        },
+        getObject: function(key,defaultValue){
+            return JSON.parse($window.localStorage[key] || defaultValue)
+        }
+    }
+}])
+
+
+
+
+$cordovaLocalNotification.schedule({
+    id:1,
+    title: "Added Favorite",
+    text: $scope.dishes[index].name
+}).then(function(){
+    console.log('Added Favorite ' + $scope.dishes[index].name);
+},function(){
+    console.log('Failed to add Favorite');
+})
+
+$cordovaToast.show('Added Favorite ' + $scope.dished[index].name, 'long', 'center')
+.then(function(success){
+    //success action
+},function(error){
+    //error action
+})
+
+
+$cordovaCamera.getPicture(options).then(function(imageData){
+    $scope.registration.imgSrc = "data:image/jpeg;base64," + imageData;
+},function(err){
+    console.log(err);
+})
+
+
+
+
+
+
+
+
+
+

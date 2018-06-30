@@ -1,0 +1,11 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/gulpfile.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ngCordova/dist/ng-cordova.min.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ngCordova/dist/ng-cordova.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ngCordova/dist/ng-cordova-mocks.min.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ngCordova/dist/ng-cordova-mocks.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ionic/js/ionic.min.js",
+        "C:/AppServ/www/my/project/lesson - ionic/Ionic/conFusion/www/lib/ionic/js/ionic.js"
+    ]
+}

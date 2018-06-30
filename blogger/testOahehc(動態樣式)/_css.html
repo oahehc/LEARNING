@@ -1,0 +1,24 @@
+<style>
+    /*背景圖片位置設定*/
+    .thumbnail{
+        background-position: center left !important;
+    }
+    /*圖形旋轉角度 ; 圖形外邊界設定*/
+    .item{
+        transform: rotate(0deg) !important;
+        margin: 0px 10px 10px 10px !important;
+    }
+    /*隱藏*/
+    #views {
+        display: none;
+        visibility: hidden;
+    }
+    /*於物件前加入特定內容*/
+    #page:before{
+        content: '#';
+    }
+    /*游標覆蓋時變更樣式*/
+    #page:hover{
+        color: gray;
+    }
+</style>

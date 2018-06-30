@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="${require('./assets/images/icon.png')}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>vue-sample</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--<h1>{{message}}</h1>-->
+        <!--<div>{{$data | json}}</div>-->
+        <!--<div v-text="message"></div>-->
+        <!--<div v-html="message"></div>-->
+        <!--<div v-once>{{message}}</div>-->
+        <!--<input type="text" v-model="score">-->
+        <!--<button @click="handleClick">click</button>-->
+        <!--<p v-if="score>6">good</p>-->
+        <!--<p v-else>bad</p>-->
+        <!--<a :href="linkUrl" :title="linkTitle" :attr01="somthingElse">Link</a>-->
+
+        <!--<select v-model="selectOptions">
+            <option value=""></option>
+            <option value="1">111</option>
+            <option value="2">222</option>
+        </select>-->
+
+        <!--<table>
+            <tr v-for="(employee, index) in employees">
+                <td>{{index}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td><button @click="deleteEmployee(index)">X</button></td>
+            </tr>
+        </table>-->
+
+        <!--<b-alert :show="show" state="success" dismissible>This is an alert</b-alert>-->
+
+        <!--<i class="fa fa-check" aria-hidden="true"></i>-->
+
+        <!--<record-element v-for="record in list" :record="record" @after-update="updateList"></record-element>-->
+
+        <!--<button @click="sendApi">API test</button>
+        <div>{{apiResult}}</div>-->
+
+        <br>
+        <mdl-badge :badge="value">
+            <span>Inbox</span>
+        </mdl-badge>
+        <mdl-badge :badge="value" no-background>
+            <span>Inbox</span>
+        </mdl-badge>
+        <mdl-badge :badge="text" overlap>
+            <i class="material-icons">account_box</i>
+        </mdl-badge>
+
+
+        <b-form-fieldset :feedback="feedback" :state="state">
+            <b-form-input v-model="name"></b-form-input>
+        </b-form-fieldset>
+
+
+        <button v-on:click="show = !show">Toggle</button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
+
+    </div>
+</body>
+
+</html>

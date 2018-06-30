@@ -1,0 +1,111 @@
+/*指定 html tag*/
+div{ 
+    ...
+}
+/*指定 class*/
+.item{ 
+    ...
+}
+ /*指定 id*/
+#header{ /*id*/
+    ...
+}
+/*指定#header下的.level1內容*/
+#header>.level1{ 
+    ...
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+/*設定元素旋轉角度*/
+.item {
+    transform: rotate(0deg) !important;
+}
+
+/*設定間距*/
+.item {
+    margin: 0px 10px 10px 10px; /*外間距*/
+    padding: 0px; /*內間距*/
+}
+
+/*隱藏元素*/
+#views {
+    display: none; /*完全移除*/
+    visibility: hidden; /*隱藏內容但保留元素位置*/
+}
+
+/*於指定元素前加入設定的內容與樣式*/
+#pages:before {
+    content: '*';
+    color: red;
+}
+
+/*設定滑鼠游標指到時的效果*/
+#pages:hover {
+    color: white;
+    background: black;
+}
+
+/*字型調整*/
+body,input,button{
+    font-family: 'Calibri','微軟正黑體';
+}
+
+/*設定背景*/
+.tabs-outer {
+    background: red; /*by 顏色*/
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkzNkM3MDA3ODQwODExRTE4Qjc4RDNDNjczNjI2RTYyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkzNkM3MDA4ODQwODExRTE4Qjc4RDNDNjczNjI2RTYyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTM2QzcwMDU4NDA4MTFFMThCNzhEM0M2NzM2MjZFNjIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTM2QzcwMDY4NDA4MTFFMThCNzhEM0M2NzM2MjZFNjIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6PglejAAAAK0lEQVR42j1KCQoAMAiq0f9/pd+yjG2CeJakeCCpmGIJQNaa1qNvaXN+uGj2rBbwWgeb2gAAAABJRU5ErkJggg==); /*by 圖片 (可用圖片連結或base64編碼)*/
+}
+
+/*設定長寬*/
+#Header2_headerimg{
+    width: 800px;
+    height: 400px;
+}
+
+/*設定位置*/
+#crosscol {
+    position: fixed; /*fixed = 隨捲軸移動 ; absolute = 不隨捲軸移動*/
+    top: 0px; /*頂端和頁面相對位置, 可使用負數*/
+    left: 0px; /*左方和頁面相對位置, 可使用負數*/
+}
+
+/*物件重疊時的顯示順序, 越大者先顯示*/
+#crosscol {
+    z-index: 10;
+}
+
+/*文字對齊方式*/
+.date-header{
+    text-align: center; /*right left*/
+}
+
+/*文字大小寫轉換*/
+.date-header{
+    text-transform: uppercase; /*uppercase | lowercase | capitalize(首字大寫)*/
+}
+
+/*移除超連結底線*/
+.post-title>a:hover{
+    text-decoration: none !important; /*移除超連結底線*/
+}
+
+/*延遲hover效果*/
+.post-title>a:hover{
+            transition: all 0.25s ease-out;
+         -o-transition: all 0.25s ease-out; /*for不同瀏覽器的前綴字*/
+       -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+}
+
+/*圓角*/
+#crosscol ul{
+    border-radius: 0px;
+}
+
+/*陰影*/
+.content-outer{
+    box-shadow: 0 0;
+    -webkit-box-shadow: 0 0;
+}

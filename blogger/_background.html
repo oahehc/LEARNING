@@ -1,0 +1,47 @@
+<!--- 圖片背景位置,大小調整範例 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            float: left;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .zero{
+            background-image: url(_pic/0.jpg);
+            background-size: 500% auto;
+        }
+        .one{
+            background-image: url(_pic/1.jpg);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+        .two{
+            background-image: url(_pic/2.jpg);
+            background-size: 100% 100%;
+        }
+        .three{
+            background-image: url(_pic/3.jpg);
+            background-size: auto 100%;
+        }
+        .four{
+            background-image: url(_pic/4.jpg);
+            background-size: auto 100%;
+            background-position: center center;
+        }
+    </style>
+    <title>Test</title>
+</head>
+<body>
+   <div class="zero"></div>
+   <div class="one"></div>
+   <div class="two"></div>
+   <div class="three"></div>
+   <div class="four"></div>
+</body>
+</html>
