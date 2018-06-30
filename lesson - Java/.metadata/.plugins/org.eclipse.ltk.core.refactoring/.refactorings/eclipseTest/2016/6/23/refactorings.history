@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move package &apos;edu.duke&apos; to &apos;VocabularyAnalizer/src&apos;&#x0D;&#x0A;- Original project: &apos;eclipseTest&apos;&#x0D;&#x0A;- Destination element: &apos;VocabularyAnalizer/src&apos;&#x0D;&#x0A;- Original element: &apos;eclipseTest/src/edu.duke&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=VocabularyAnalizer/src" element1="/src&lt;edu.duke" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1465006920637" version="1.0"/>
-</session>

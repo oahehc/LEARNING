@@ -1,2 +1,0 @@
-Hello Node.js!
-https://github.com/simenkid
