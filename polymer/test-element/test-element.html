@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="test-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+    <input value="{{prop1::input}}" />
+    <h2>[[prop1]]</h2>
+    <ul id="list">
+        <li>Hypertext Markup Language</li>
+        <li>Cascading Style Sheets</li>
+        <li>Javascript</li>
+        <li>Web Components</li>
+        <li>Polymer</li>
+        <li>Web Browser</li>
+        <li>Mentally Friendly</li>
+    </ul>
+  </template>
+  <script>
+    class TestElement extends Polymer.Element {
+      static get is() { return 'test-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: '',
+            observer: 'filterList',
+          }
+        };
+      }
+      filterList() {
+        var items = this.$.list.children;
+        for (var i = 0; i < items.length; i++) {
+            var item = Polymer.dom(items[i]);
+            if (item.textContent.includes(this.prop1)) {
+              item.classList.add('hidden');
+            } else {
+              item.classList.remove('hidden');
+            }
+        }
+      }
+    }
+
+    window.customElements.define(TestElement.is, TestElement);
+  </script>
+</dom-module>
