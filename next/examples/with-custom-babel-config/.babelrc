@@ -1,6 +1,0 @@
-{
-  "presets": [
-    "next/babel",
-    ["@babel/preset-stage-0", { "decoratorsLegacy": true }]
-  ],
-}
