@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 
-export default class extends React.Component {
+export default class Index extends React.Component {
   // componentDidMount() {
   //   Router.beforePopState(({ url, as, options }) => {
   //     console.log('--- beforePopState', { url, as, options });
@@ -29,7 +29,7 @@ export default class extends React.Component {
         </Head>
         <p>Hello world!</p>
         <div>
-          {['init', 'prefetch', 'language'].map((name, index) => (
+          {['init', 'prefetch', 'language', 'reduxClock'].map((name, index) => (
             <div key={index}>
               <Link href={`/${name}`}>
                 <a>{name}</a>
