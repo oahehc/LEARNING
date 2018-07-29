@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 export default class extends React.Component {
   static async getInitialProps({ req }) {
-    console.log('xxx getInitialProps', { req });
+    console.log('--- getInitialProps', { req });
     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
     return { userAgent };
   }

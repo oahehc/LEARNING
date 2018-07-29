@@ -4,18 +4,18 @@ import Link from 'next/link';
 import Router from 'next/router';
 
 export default class extends React.Component {
-  componentDidMount() {
-    Router.beforePopState(({ url, as, options }) => {
-      console.log('xxx beforePopState', { url, as, options });
-      // I only want to allow these two routes!
-      if (as !== '/' || as !== '/other') {
-        // Have SSR render bad routes as a 404.
-        window.location.href = as;
-        return false;
-      }
-      return true;
-    });
-  }
+  // componentDidMount() {
+  //   Router.beforePopState(({ url, as, options }) => {
+  //     console.log('--- beforePopState', { url, as, options });
+  //     // I only want to allow these two routes!
+  //     if (as !== '/' || as !== '/other') {
+  //       // Have SSR render bad routes as a 404.
+  //       window.location.href = as;
+  //       return false;
+  //     }
+  //     return true;
+  //   });
+  // }
   render() {
     return (
       <div>
@@ -29,7 +29,7 @@ export default class extends React.Component {
         </Head>
         <p>Hello world!</p>
         <div>
-          {['init', 'prefetch'].map((name, index) => (
+          {['init', 'prefetch', 'language'].map((name, index) => (
             <div key={index}>
               <Link href={`/${name}`}>
                 <a>{name}</a>
