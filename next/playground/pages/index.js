@@ -29,7 +29,7 @@ export default class Index extends React.Component {
         </Head>
         <p>Hello world!</p>
         <div>
-          {['init', 'prefetch', 'language', 'reduxClock'].map((name, index) => (
+          {['init', 'prefetch', 'language', 'reduxClock', 'nested'].map((name, index) => (
             <div key={index}>
               <Link href={`/${name}`}>
                 <a>{name}</a>
