@@ -31,6 +31,9 @@
 - analyze coverage report
 - coverage threshold
 - codeCov
+- watch mode
+- is-ci-cli
+- jest-watch-typeahead
 - 
 
 

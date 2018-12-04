@@ -1,0 +1,86 @@
+{
+  "name": "dom-testing-library-with-anything",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "precommit": "lint-staged"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "@dojo/framework": "^3.0.0",
+    "@polymer/polymer": "^3.0.5",
+    "angular": "^1.7.4",
+    "aurelia-framework": "^1.3.0",
+    "backbone": "^1.3.3",
+    "backbone-torso": "^0.8.16",
+    "from-html": "^0.3.3",
+    "hyperapp": "^1.2.9",
+    "jquery": "^3.3.1",
+    "knockout": "^3.4.2",
+    "mithril": "^1.1.6",
+    "preact": "^8.3.1",
+    "react": "^16.5.1",
+    "stimulus": "^1.1.0",
+    "svelte": "^2.13.4",
+    "vue": "^2.5.17",
+    "wigly": "^0.1.9"
+  },
+  "devDependencies": {
+    "@angular/common": "^6.1.7",
+    "@angular/compiler": "^6.1.7",
+    "@angular/core": "^6.1.7",
+    "@angular/platform-browser": "^6.1.7",
+    "@angular/platform-browser-dynamic": "^6.1.7",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "dom-testing-library": "^3.5.1",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "jest-dom": "^1.12.0",
+    "jest-preset-angular": "^6.0.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "react-dom": "^16.5.1",
+    "zone.js": "^0.8.26"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-typescript",
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
+    ],
+    "transform": {
+      "^.+\\.(js|ts|tsx)$": "babel-jest"
+    },
+    "testMatch": [
+      "**/*.test.+(js|ts|tsx)"
+    ],
+    "preset": "jest-preset-angular"
+  }
+}
