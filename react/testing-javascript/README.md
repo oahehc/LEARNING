@@ -52,8 +52,18 @@ https://github.com/kentcdodds/jest-cypress-react-babel-webpack
 - start-server-and-test
 - Debug .then(subject => ...)
 - test user registration
-- test-data-bot
+- test-data-bot -> generate user name & password
+- Test Driven Development by Cypress
+- mock request
+- register -> logout -> login
+- register by request
+- custom command for register user
+- authenticated user
+- login by request
+- custom command for login
 - 
+
+
 
 
 ### Test React Components with Jest and react-testing-library
