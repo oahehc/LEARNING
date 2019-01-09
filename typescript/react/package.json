@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "hoist-non-react-statics": "^3.2.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
