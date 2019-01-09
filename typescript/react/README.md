@@ -1,0 +1,1 @@
+https://levelup.gitconnected.com/ultimate-react-component-patterns-with-typescript-2-8-82990c516935
