@@ -95,5 +95,79 @@
         y2="50"
       />
     </svg>
+    <svg>
+      <polyline
+        fill="none"
+        stroke="#000"
+        stroke-width="10"
+        stroke-miterlimit="10"
+        points="62,45 109,62.7 54.3,74.3 101.3,87.7 77.7,116.7 "
+      />
+    </svg>
+    <svg>
+      <polyline
+        fill="none"
+        stroke="#000"
+        stroke-width="10"
+        stroke-miterlimit="0"
+        points="62,45 109,62.7 54.3,74.3 101.3,87.7 77.7,116.7 "
+      />
+    </svg>
+    <svg width="300" height="400">
+      <defs>
+        <marker
+          id="a1"
+          viewBox="0 0 77 77"
+          refX="20"
+          refY="39"
+          markerWidth="30"
+          markerHeight="30"
+          orient="auto"
+        >
+          <path
+            fill="#f00"
+            d="M12.707,38.6C-8.594,27.4-1.594,0,22.406,0c30.3,0,51.7,38.5,51.7,38.5s-22.7,38.6-51.7,38.6 C-1.594,77.1-8.594,49.8,12.707,38.6z"
+          ></path>
+        </marker>
+        <marker
+          id="a2"
+          viewBox="0 0 80 45"
+          refX="50"
+          refY="22"
+          markerWidth="40"
+          markerHeight="30"
+          orient="auto"
+        >
+          <polygon
+            fill="#600"
+            points="65.397,0 0,0 14.173,22.417 0.001,44.833 65.398,44.833 79.569,22.417 "
+          />
+        </marker>
+      </defs>
+      <polyline
+        points="50,20 150,20"
+        fill="none"
+        stroke="black"
+        stroke-width="1"
+        marker-end="url(#a1)"
+        marker-start="url(#a2)"
+      ></polyline>
+      <polyline
+        points="50,60 150,80"
+        fill="none"
+        stroke="black"
+        stroke-width="1"
+        marker-end="url(#a1)"
+        marker-start="url(#a2)"
+      ></polyline>
+      <polyline
+        points="50,100 150,200"
+        fill="none"
+        stroke="black"
+        stroke-width="1"
+        marker-end="url(#a1)"
+        marker-start="url(#a2)"
+      ></polyline>
+    </svg>
   </body>
 </html>

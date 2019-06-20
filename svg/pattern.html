@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>pattern</title>
+  </head>
+  <body>
+    <svg width="240" height="160">
+      <defs>
+        <pattern id="p1" patternUnits="userSpaceOnUse" width="60" height="60">
+          <rect width="30" height="30" fill="#f99" x="0" y="0"></rect>
+        </pattern>
+      </defs>
+      <rect
+        width="80"
+        height="80"
+        x="120"
+        y="30"
+        stroke="#000"
+        stroke-width="2"
+        fill="url(#p1)"
+      />
+      <rect
+        width="100"
+        height="100"
+        x="10"
+        y="30"
+        stroke="#00f"
+        stroke-width="2"
+        fill="url(#p1)"
+      />
+    </svg>
+    <svg>
+      <defs>
+        <pattern
+          id="p2"
+          patternUnits="objectBoundingBox"
+          width="0.5"
+          height="0.5"
+        >
+          <rect width="30" height="30" fill="#f99" x="0" y="0"></rect>
+        </pattern>
+      </defs>
+      <rect
+        width="80"
+        height="80"
+        x="120"
+        y="30"
+        stroke="#000"
+        stroke-width="2"
+        fill="url(#p2)"
+      />
+      <rect
+        width="100"
+        height="100"
+        x="10"
+        y="30"
+        stroke="#00f"
+        stroke-width="2"
+        fill="url(#p2)"
+      />
+    </svg>
+    <svg>
+      <defs>
+        <pattern
+          id="p3"
+          patternUnits="objectBoundingBox"
+          width=".2"
+          height=".4"
+          patternTransform="rotate(45)"
+        >
+          <rect width="10" height="50" fill="#000" x="0" y="0"></rect>
+          <rect width="10" height="50" fill="#fa0" x="10" y="0"></rect>
+        </pattern>
+      </defs>
+      <rect
+        width="100"
+        height="100"
+        x="10"
+        y="30"
+        stroke="#000"
+        stroke-width="2"
+        fill="url(#p3)"
+      />
+    </svg>
+  </body>
+</html>
