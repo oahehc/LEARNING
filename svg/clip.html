@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>clip</title>
+    <style>
+      svg {
+        border: 2px solid lightblue;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <clipPath id="a1">
+          <rect x="0" y="0" width="200" height="100" />
+        </clipPath>
+      </defs>
+      <circle cx="100" cy="100" r="100" clip-path="url(#a1)" fill="#000" />
+    </svg>
+    <svg width="1200px" height="200px">
+      <defs>
+        <clipPath id="star">
+          <polygon
+            id="starShape"
+            points="100,10 40,180 190,60 10,60 160,180 100,10"
+            stroke="blue"
+          />
+        </clipPath>
+        <clipPath id="circle">
+          <circle id="circleShape" cx="100" cy="100" r="65" />
+        </clipPath>
+        <clipPath id="b1" clip-path="url(#star)">
+          <use x="0" y="0" width="200" height="200" xlink:href="#circleShape" />
+        </clipPath>
+        <clipPath id="b2">
+          <use x="0" y="0" width="200" height="200" xlink:href="#starShape" />
+          <use x="0" y="0" width="200" height="200" xlink:href="#circleShape" />
+        </clipPath>
+      </defs>
+      <rect
+        x="10"
+        y="10"
+        width="180"
+        height="180"
+        fill="#c00"
+        clip-path="url(#star)"
+      />
+      <rect
+        x="10"
+        y="10"
+        width="180"
+        height="180"
+        fill="#0a0"
+        clip-path="url(#circle)"
+        transform="translate(200)"
+      />
+      <rect
+        x="10"
+        y="10"
+        width="180"
+        height="180"
+        fill="#09c"
+        clip-path="url(#b1)"
+        transform="translate(400)"
+      />
+      <rect
+        x="10"
+        y="10"
+        width="180"
+        height="180"
+        fill="#f90"
+        clip-path="url(#b2)"
+        transform="translate(600)"
+      />
+    </svg>
+  </body>
+</html>

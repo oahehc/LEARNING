@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>mask</title>
+    <style>
+      svg {
+        border: 2px solid lightblue;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg height="300px">
+      <defs>
+        <mask id="mask1">
+          <rect x="50" y="50" width="50" height="50" fill="#333" />
+          <rect x="100" y="100" width="50" height="50" fill="#ccc" />
+          <rect x="150" y="150" width="50" height="50" fill="#fff" />
+        </mask>
+      </defs>
+      <rect id="box1" x="50" y="50" width="150" height="150" fill="#0f0" />
+      <rect
+        id="box2"
+        x="50"
+        y="50"
+        width="150"
+        height="150"
+        fill="#f00"
+        mask="url(#mask1)"
+      />
+    </svg>
+  </body>
+</html>
