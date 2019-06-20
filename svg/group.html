@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>group</title>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <g id="g1">
+          <rect id="rect1" width="100" height="50" x="10" y="10" fill="#c00" />
+          <circle id="circle1" cx="30" cy="30" r="10" fill="#00c" />
+        </g>
+      </defs>
+      <use xlink:href="#g1" />
+      <use xlink:href="#rect1" x="110" />
+      <use xlink:href="#circle1" x="210" />
+    </svg>
+  </body>
+</html>
