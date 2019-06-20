@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>filter-transfer</title>
+  </head>
+  <body>
+    <svg width="300" height="1000">
+      <defs>
+        <filter
+          id="table"
+          filterUnits="userSpaceOnUse"
+          x="0"
+          y="200"
+          width="300"
+          height="200"
+        >
+          <feComponentTransfer>
+            <feFuncR type="table" tableValues="0.0 0.7 0.9 1.0" />
+            <feFuncG type="table" tableValues=".2 0.7 0.9 1.0" />
+            <feFuncB type="table" tableValues=".2 0.7 0.9 1.0" />
+          </feComponentTransfer>
+        </filter>
+        <filter
+          id="discrete"
+          filterUnits="userSpaceOnUse"
+          x="0"
+          y="400"
+          width="300"
+          height="200"
+        >
+          <feComponentTransfer>
+            <feFuncR type="discrete" tableValues="0.0 1.0 1.0 1.0" />
+            <feFuncG type="discrete" tableValues="0.0 0.5 0.5 0.9" />
+            <feFuncB type="discrete" tableValues="0.0 0.6" />
+          </feComponentTransfer>
+        </filter>
+        <filter
+          id="Linear"
+          filterUnits="objectBoundingBox"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+        >
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="0" intercept="0" />
+            <feFuncG type="linear" slope="1" intercept="0" />
+            <feFuncB type="linear" slope="1" intercept="0" />
+          </feComponentTransfer>
+        </filter>
+        <filter
+          id="Gamma"
+          filterUnits="objectBoundingBox"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+        >
+          <feComponentTransfer>
+            <feFuncR type="gamma" amplitude="2" exponent="5" offset="0" />
+            <feFuncG type="gamma" amplitude="2" exponent="3" offset="0" />
+            <feFuncB type="gamma" amplitude="2" exponent="1" offset="0" />
+          </feComponentTransfer>
+        </filter>
+      </defs>
+      <image
+        x="0"
+        y="0"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+      />
+      <image
+        x="0"
+        y="200"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#table)"
+      />
+      <image
+        x="0"
+        y="400"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#discrete)"
+      />
+      <image
+        x="0"
+        y="600"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#Linear)"
+      />
+      <image
+        x="0"
+        y="800"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#Gamma)"
+      />
+    </svg>
+  </body>
+</html>

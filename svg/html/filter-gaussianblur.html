@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>filter-gaussianblur</title>
+    <style>
+      svg {
+        border: 2px solid lightblue;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="1200px">
+      <defs>
+        <filter
+          width="1200"
+          height="200"
+          x="0"
+          y="0"
+          id="blur1"
+          filterUnits="userSpaceOnUse"
+        >
+          <feGaussianBlur stdDeviation="1" />
+        </filter>
+        <filter
+          width="1200"
+          height="200"
+          x="0"
+          y="0"
+          id="blur2"
+          filterUnits="userSpaceOnUse"
+        >
+          <feGaussianBlur stdDeviation="5" />
+        </filter>
+        <filter
+          width="1200"
+          height="200"
+          x="0"
+          y="0"
+          id="blur3"
+          filterUnits="userSpaceOnUse"
+        >
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+        <filter
+          width="1200"
+          height="200"
+          x="0"
+          y="0"
+          id="blur4"
+          filterUnits="userSpaceOnUse"
+        >
+          <feGaussianBlur stdDeviation="1 15" />
+        </filter>
+      </defs>
+      <rect x="30" y="30" width="70" height="70" fill="#a00"
+      filter=url("#blur1") /> <rect x="120" y="30" width="70" height="70"
+      fill="#a00" filter=url("#blur2") /><rect x="210" y="30" width="70"
+      height="70" fill="#a00" filter=url("#blur3") /><rect x="300" y="30"
+      width="70" height="70" fill="#a00" filter=url("#blur4") />
+    </svg>
+  </body>
+</html>

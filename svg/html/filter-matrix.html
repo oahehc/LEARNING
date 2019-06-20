@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>filter</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="1200px">
+      <defs>
+        <filter
+          id="filter1"
+          x="0"
+          y="0"
+          width="60%"
+          height="60%"
+          filterUnits="userSpaceOnUse"
+        >
+          <feColorMatrix
+            values="0 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 1 0"
+          />
+        </filter>
+        <filter
+          id="filter2"
+          x="0"
+          y="0"
+          width="50%"
+          height="50%"
+          filterUnits="userSpaceOnUse"
+        >
+          <feColorMatrix
+            values="1 0 0 0 0
+        0 0 0 0 0
+        0 0 1 0 0
+        0 0 0 1 0"
+          />
+        </filter>
+        <filter
+          id="filter3"
+          x="0"
+          y="0"
+          width="30%"
+          height="30%"
+          filterUnits="userSpaceOnUse"
+        >
+          <feColorMatrix
+            values="1 0 0 0 0
+        0 1 0 0 0
+        0 0 0 0 0
+        0 0 0 1 0"
+          />
+        </filter>
+      </defs>
+      <circle cx="50" cy="50" r="50" fill="white" />
+      <circle cx="100" cy="50" r="50" fill="white" filter="url(#filter1)" />
+      <circle cx="150" cy="50" r="50" fill="white" filter="url(#filter2)" />
+      <circle cx="200" cy="50" r="50" fill="white" filter="url(#filter3)" />
+    </svg>
+  </body>
+</html>

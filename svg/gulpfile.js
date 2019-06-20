@@ -7,9 +7,9 @@ gulp.task('serve', () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.'],
+      baseDir: ['./html/'],
     },
   });
 
-  gulp.watch(['*.html']).on('change', reload);
+  gulp.watch(['**/*.html']).on('change', reload);
 });
