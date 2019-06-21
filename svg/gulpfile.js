@@ -11,5 +11,5 @@ gulp.task('serve', () => {
     },
   });
 
-  gulp.watch(['**/*.html']).on('change', reload);
+  gulp.watch(['./html/*.html']).on('change', reload);
 });

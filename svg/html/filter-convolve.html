@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>filter-convolve</title>
+  </head>
+  <body>
+    <svg width="300" height="1000">
+      <defs>
+        <filter
+          id="blur1"
+          filterUnits="userSpaceOnUse"
+          x="0"
+          y="200"
+          width="300"
+          height="200"
+        >
+          <feConvolveMatrix
+            order="3"
+            kernelMatrix="
+        1  1  1    
+        1  1  1    
+        1  1  1"
+            edgeMode="none"
+          ></feConvolveMatrix>
+        </filter>
+        <filter
+          id="blur2"
+          filterUnits="userSpaceOnUse"
+          x="0"
+          y="400"
+          width="300"
+          height="200"
+        >
+          <feConvolveMatrix
+            order="3"
+            kernelMatrix="
+            3  0  3    
+            0  0  0    
+            3  0  3"
+            edgeMode="none"
+          ></feConvolveMatrix>
+        </filter>
+        <filter
+          id="sharp"
+          filterUnits="objectBoundingBox"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+        >
+          <feConvolveMatrix
+            order="3"
+            kernelMatrix="
+        0 -2  0    
+       -2  15 -2    
+        0 -2  0"
+            edgeMode="none"
+          ></feConvolveMatrix>
+        </filter>
+        <filter
+          id="emboss"
+          filterUnits="objectBoundingBox"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+        >
+          <feConvolveMatrix
+            order="3"
+            kernelMatrix="
+        -9 -2  0    
+        -2  1  2    
+         0  2  9"
+            edgeMode="none"
+          ></feConvolveMatrix>
+        </filter>
+      </defs>
+      <image
+        x="0"
+        y="0"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+      />
+      <image
+        x="0"
+        y="200"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#blur1)"
+      />
+      <image
+        x="0"
+        y="400"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#blur2)"
+      />
+      <image
+        x="0"
+        y="600"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#sharp)"
+      />
+      <image
+        x="0"
+        y="800"
+        width="300"
+        height="200"
+        xlink:href="./images/iron-man.jpeg"
+        filter="url(#emboss)"
+      />
+    </svg>
+  </body>
+</html>

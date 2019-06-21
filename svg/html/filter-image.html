@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>filter-image</title>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <filter
+          id="filter"
+          primitiveUnits="objectBoundingBox"
+          x="0"
+          y="0"
+          width="1"
+          height="1"
+        >
+          <feImage xlink:href="./images/iron-man.jpeg" width=".4" height=".4" />
+          <feTile />
+        </filter>
+      </defs>
+      <rect x="30" y="30" width="250" height="150" filter="url(#filter)" />
+      <rect x="30" y="30" width="250" height="150" stroke="#00f" fill="none" />
+    </svg>
+  </body>
+</html>
